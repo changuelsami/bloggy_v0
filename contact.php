@@ -4,11 +4,18 @@
 	<div class="col-md-9" id="content_text">
 		<h1>Contactez moi</h1>
 
-
+<?php
+$ret = $_GET['retour'];
+if ($ret == 1)
+{
+	$sujet = $_GET['sujet'];
+?>
 		<div class="alert alert-success" id="notif">
+	Merci, votre message intitulé '<?php echo $sujet ?>' a bien été envoyé
 		</div>
-
-
+<?php
+}
+?>
 		<form class="form-horizontal" action="contact_action.php" method="post">
 			<div class="form-group has-feedback">
 				<label class="control-label col-sm-2" for="email" >E-mail *:</label>

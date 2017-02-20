@@ -11,10 +11,6 @@ class Contact extends Mysql
 	private $_d_ajout;
 
 	// Setters
-	public function set_id($id) {
-		$this->_id = $id;
-	}
-
 	public function set_email($email) {
 		$this->_email = $email;
 	}
@@ -60,18 +56,19 @@ class Contact extends Mysql
 	    	!isset(???) || 
 	    	!???(???)     	)
 	    	return false;
-	    $q = "INSERT INTO contact(id, email, sujet, message, newsletter, d_ajout) VALUES 
-	  		(  null				  , '$this->_email'	,
-			  ???	  , ???	,
-			  ???  , NOW()
-			)";		
+	    $q = "INSERT INTO contact(id, email, sujet, message, newsletter, d_ajout) 
+		      VALUES 
+		  		( null , '$this->_email' ,
+				  ???   , ???	,
+				  ???   , NOW()
+				)";		
 		$res = $this->requete($q);
 
 		return mysqli_insert_id($this->get_cnx());	// Renvoi l'id de l'enregistrement ajouté		
 	}
 	
-	public function ???(){
-		$q = "DELETE FROM contact WHERE id = '$this->_id'";
+	public function ???($id){
+		$q = "DELETE FROM contact WHERE id = '$id'";
 		$res = $this->requete($q);
 		return $res;
 	}
